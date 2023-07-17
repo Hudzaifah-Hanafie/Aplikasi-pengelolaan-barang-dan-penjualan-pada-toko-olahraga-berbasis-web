@@ -98,7 +98,7 @@ if (isset($_POST['deleteBarang'])) {
     }
 }
 
-// Menambah pembelian buku
+// Menambah pembelian barang
 if(isset($_POST['beliBarang'])) {
     $id_barang = $_POST['id_barang'];
     $jumlah_barang = $_POST['jumlah_barang'];
@@ -120,7 +120,7 @@ if(isset($_POST['beliBarang'])) {
     }   
 }
 
-// Menambah penjualan buku
+// Menambah penjualan barang
 if(isset($_POST['jualBarang'])) {
     $id_barang = $_POST['id_barang'];
     $jumlah_barang = $_POST['jumlah_barang'];
@@ -212,6 +212,8 @@ if(isset($_POST['submitAdminBaru'])) {
     $email = $_POST['email'];
     $no_hp = $_POST['no_hp'];
 
+    $password = md5($password);
+
     $queryInsertAdmin = mysqli_query($conn, "INSERT INTO admin (username, password, email, no_hp) VALUES ('$username', '$password', '$email', '$no_hp')");
 
     if($queryInsertAdmin) {
@@ -227,6 +229,9 @@ if(isset($_POST['updateAdmin'])) {
     $password = $_POST['password'];
     $email = $_POST['email'];
     $no_hp = $_POST['no_hp'];
+
+    $username = md5($username);
+    $password = md5($password);
 
     $queryUpdateAdmin = mysqli_query($conn, "UPDATE admin SET username='$username', password='$password', email='$email', no_hp='$no_hp' WHERE id_admin='$id_admin'");
     if($queryUpdateAdmin) {

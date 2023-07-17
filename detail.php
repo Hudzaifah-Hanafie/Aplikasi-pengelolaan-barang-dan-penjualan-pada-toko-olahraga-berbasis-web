@@ -72,7 +72,7 @@ $gambar = $fetch['gambar'];
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">Detail Barang</h1>
+                        <h1 class="mt-4">Riwayat Transaksi</h1>
                         <div class="card mb-4">
                             <div class="card-header">
                                 <?= $nama_barang; ?>
